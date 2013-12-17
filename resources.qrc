@@ -1,0 +1,21 @@
+<RCC>
+  <qresource prefix="resources" >
+    <file>resources/icons/application-exit.gif</file>
+    <file>resources/icons/application-exit.ico</file>
+    <file>resources/icons/application-exit.png</file>
+    <file>resources/icons/application-vnd.oasis.opendocument.database.png</file>
+    <file>resources/icons/document-print.png</file>
+    <file>resources/icons/document-print-preview.png</file>
+    <file>resources/icons/document-save.png</file>
+    <file>resources/icons/draw-text.png</file>
+    <file>resources/icons/format-font-size-less.png</file>
+    <file>resources/icons/format-font-size-more.png</file>
+    <file>resources/icons/next.png</file>
+    <file>resources/icons/prev.png</file>
+    <file>resources/icons/view-calendar-day.png</file>
+    <file>resources/icons/view-calendar-list.png</file>
+    <file>resources/icons/view-calendar-tasks.png</file>
+    <file>resources/icons/view-refresh.png</file>
+    <file>resources/icons/window-close.png</file>
+  </qresource>
+</RCC>

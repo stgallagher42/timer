@@ -1,0 +1,937 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>STG_Timer</class>
+ <widget class="QMainWindow" name="STG_Timer">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>572</width>
+    <height>496</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>STG Timer</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout_6">
+    <item row="2" column="0">
+     <widget class="QGroupBox" name="groupBox_4">
+      <property name="title">
+       <string>Timer</string>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_7">
+       <item row="0" column="0">
+        <widget class="QLabel" name="title_timer_start">
+         <property name="text">
+          <string>Start Time</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="2">
+        <widget class="QLabel" name="title_current_timer">
+         <property name="text">
+          <string>Current Timer</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="2">
+        <widget class="QTimeEdit" name="timeEdit_timer">
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+         <property name="displayFormat">
+          <string>hh:mm:ss</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="3">
+        <widget class="QPushButton" name="pushButton_save">
+         <property name="text">
+          <string>Stop / Save</string>
+         </property>
+         <property name="icon">
+          <iconset resource="../resources.qrc">
+           <normaloff>:/resources/resources/icons/document-save.png</normaloff>:/resources/resources/icons/document-save.png</iconset>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="3">
+        <widget class="QPushButton" name="pushButton_start_pause">
+         <property name="text">
+          <string>Start / Pause</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QDateTimeEdit" name="dateTimeEdit_start">
+         <property name="displayFormat">
+          <string>hh:mm:ss ap</string>
+         </property>
+       </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="0" column="0">
+     <widget class="QToolBox" name="toolBox">
+      <property name="currentIndex">
+       <number>2</number>
+      </property>
+      <widget class="QWidget" name="widget">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>541</width>
+         <height>244</height>
+        </rect>
+       </property>
+       <attribute name="label">
+        <string>Yearly Totals</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_3">
+        <item>
+         <widget class="QFrame" name="frame_3">
+          <layout class="QGridLayout" name="gridLayout_3">
+           <item row="2" column="0">
+            <widget class="QLabel" name="title_billable">
+             <property name="font">
+              <font>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="text">
+              <string>Billable Hours</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="0">
+            <widget class="QLabel" name="title_nondiscount">
+             <property name="font">
+              <font>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="text">
+              <string>Non Discounted Hours</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="2">
+            <widget class="QLabel" name="title_needed">
+             <property name="font">
+              <font>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="text">
+              <string>Needed</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item row="9" column="0">
+            <widget class="QLabel" name="title_important_dates">
+             <property name="text">
+              <string>Important Dates</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item row="13" column="1">
+            <widget class="QLabel" name="label_time_remaining_1">
+             <property name="text">
+              <string>0</string>
+             </property>
+            </widget>
+           </item>
+           <item row="13" column="2">
+            <widget class="QLabel" name="label_time_over_under_1">
+             <property name="text">
+              <string>0</string>
+             </property>
+            </widget>
+           </item>
+           <item row="14" column="1">
+            <widget class="QLabel" name="label_time_remaining_2">
+             <property name="text">
+              <string>0</string>
+             </property>
+            </widget>
+           </item>
+           <item row="14" column="2">
+            <widget class="QLabel" name="label_time_over_under_2">
+             <property name="text">
+              <string>0</string>
+             </property>
+            </widget>
+           </item>
+           <item row="15" column="1">
+            <widget class="QLabel" name="label_time_remaining_3">
+             <property name="text">
+              <string>0</string>
+             </property>
+            </widget>
+           </item>
+           <item row="15" column="2">
+            <widget class="QLabel" name="label_time_over_under_3">
+             <property name="text">
+              <string>0</string>
+             </property>
+            </widget>
+           </item>
+           <item row="7" column="0">
+            <widget class="QLabel" name="title_timeoff">
+             <property name="font">
+              <font>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="text">
+              <string>Days off Remaining</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="2">
+            <widget class="QLabel" name="title_current">
+             <property name="font">
+              <font>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="text">
+              <string>Current Total</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="2">
+            <widget class="QLabel" name="label_currentTotal">
+             <property name="text">
+              <string>0</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item row="9" column="2">
+            <widget class="QLabel" name="title_over_under">
+             <property name="text">
+              <string>Time Over/Under</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item row="9" column="1">
+            <widget class="QLabel" name="title_time_remaining">
+             <property name="text">
+              <string>Time Remaining</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item row="7" column="2">
+            <widget class="QLabel" name="label_needed">
+             <property name="text">
+              <string>0</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item row="7" column="1">
+            <widget class="QLabel" name="label_time_off">
+             <property name="text">
+              <string>0</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="1">
+            <widget class="QLabel" name="label_billable">
+             <property name="text">
+              <string>0</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="1">
+            <widget class="QLabel" name="label_nondiscount">
+             <property name="text">
+              <string>0</string>
+             </property>
+            </widget>
+           </item>
+           <item row="13" column="0">
+            <widget class="QDateEdit" name="dateEdit_important_1">
+             <property name="date">
+              <date>
+               <year>2012</year>
+               <month>5</month>
+               <day>31</day>
+              </date>
+             </property>
+             <property name="calendarPopup">
+              <bool>true</bool>
+             </property>
+             <property name="displayFormat">
+              <string>MMM d, yyyy</string>
+             </property>
+            </widget>
+           </item>
+           <item row="14" column="0">
+            <widget class="QDateEdit" name="dateEdit_important_2">
+             <property name="date">
+              <date>
+               <year>2012</year>
+               <month>11</month>
+               <day>9</day>
+              </date>
+             </property>
+             <property name="calendarPopup">
+              <bool>true</bool>
+             </property>
+             <property name="displayFormat">
+              <string>MMM d, yyyy</string>
+             </property>
+            </widget>
+           </item>
+           <item row="15" column="0">
+            <widget class="QDateEdit" name="dateEdit_important_3">
+             <property name="date">
+              <date>
+               <year>2012</year>
+               <month>12</month>
+               <day>1</day>
+              </date>
+             </property>
+             <property name="calendarPopup">
+              <bool>true</bool>
+             </property>
+             <property name="displayFormat">
+              <string>MMM d, yyyy</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QLabel" name="label_goal">
+             <property name="text">
+              <string>0</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="title_goal">
+             <property name="font">
+              <font>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="text">
+              <string>Goal</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="page_4">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>541</width>
+         <height>251</height>
+        </rect>
+       </property>
+       <attribute name="label">
+        <string>Weekly Time</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <item>
+         <widget class="QFrame" name="frame_2">
+          <layout class="QGridLayout" name="gridLayout_4">
+           <item row="5" column="4">
+            <widget class="QLabel" name="title_tue">
+             <property name="text">
+              <string>Tuesday</string>
+             </property>
+            </widget>
+           </item>
+           <item row="6" column="4">
+            <widget class="QLabel" name="title_wed">
+             <property name="text">
+              <string>Wednesday</string>
+             </property>
+            </widget>
+           </item>
+           <item row="8" column="4">
+            <widget class="QLabel" name="title_thur">
+             <property name="text">
+              <string>Thursday</string>
+             </property>
+            </widget>
+           </item>
+           <item row="9" column="4">
+            <widget class="QLabel" name="title_fri">
+             <property name="text">
+              <string>Friday</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="4">
+            <widget class="QLabel" name="title_mon">
+             <property name="text">
+              <string>Monday</string>
+             </property>
+            </widget>
+           </item>
+           <item row="10" column="4">
+            <widget class="QLabel" name="title_weekday">
+             <property name="text">
+              <string>Weekend</string>
+             </property>
+            </widget>
+           </item>
+           <item row="10" column="0">
+            <widget class="QLabel" name="title_overtime">
+             <property name="text">
+              <string>Overtime</string>
+             </property>
+            </widget>
+           </item>
+           <item row="9" column="2">
+            <widget class="QLabel" name="label_timer">
+             <property name="text">
+              <string>0</string>
+             </property>
+            </widget>
+           </item>
+           <item row="10" column="2">
+            <widget class="QLabel" name="label_ot">
+             <property name="text">
+              <string>0</string>
+             </property>
+            </widget>
+           </item>
+           <item row="8" column="0">
+            <widget class="QLabel" name="title_subtract">
+             <property name="text">
+              <string>Subtract</string>
+             </property>
+            </widget>
+           </item>
+           <item row="6" column="0">
+            <widget class="QLabel" name="title_inprogress">
+             <property name="text">
+              <string>In Progress</string>
+             </property>
+            </widget>
+           </item>
+           <item row="5" column="0">
+            <widget class="QLabel" name="title_time_clock">
+             <property name="text">
+              <string>Time Clock</string>
+             </property>
+            </widget>
+           </item>
+           <item row="5" column="2">
+            <widget class="QLabel" name="label_time_clock">
+             <property name="text">
+              <string>0</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0">
+            <widget class="QLabel" name="title_time_needed">
+             <property name="text">
+              <string>Time Needed</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="2">
+            <widget class="QLabel" name="label_time_needed">
+             <property name="text">
+              <string>0</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="0">
+            <widget class="QLabel" name="title_wk_goal">
+             <property name="text">
+              <string>Weekly Goal</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="5">
+            <widget class="QLabel" name="title_day_hrs">
+             <property name="text">
+              <string>Daily Hours</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="6">
+            <widget class="QLabel" name="title_ot_hrs">
+             <property name="text">
+              <string>OT Hours</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="2">
+            <widget class="QLabel" name="label_wk_goal">
+             <property name="text">
+              <string>0</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="5">
+            <widget class="QTimeEdit" name="timeEdit_mon">
+             <property name="time">
+              <time>
+               <hour>0</hour>
+               <minute>0</minute>
+               <second>0</second>
+              </time>
+             </property>
+             <property name="displayFormat">
+              <string>hh:mm:ss </string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="6">
+            <widget class="QTimeEdit" name="timeEdit_ot_mon">
+             <property name="displayFormat">
+              <string>hh:mm:ss </string>
+             </property>
+            </widget>
+           </item>
+           <item row="5" column="5">
+            <widget class="QTimeEdit" name="timeEdit_tue">
+             <property name="displayFormat">
+              <string>hh:mm:ss </string>
+             </property>
+            </widget>
+           </item>
+           <item row="5" column="6">
+            <widget class="QTimeEdit" name="timeEdit_ot_tue">
+             <property name="displayFormat">
+              <string>hh:mm:ss </string>
+             </property>
+            </widget>
+           </item>
+           <item row="6" column="5">
+            <widget class="QTimeEdit" name="timeEdit_wed">
+             <property name="displayFormat">
+              <string>hh:mm:ss </string>
+             </property>
+            </widget>
+           </item>
+           <item row="6" column="6">
+            <widget class="QTimeEdit" name="timeEdit_ot_wed">
+             <property name="displayFormat">
+              <string>hh:mm:ss </string>
+             </property>
+            </widget>
+           </item>
+           <item row="8" column="5">
+            <widget class="QTimeEdit" name="timeEdit_thur">
+             <property name="displayFormat">
+              <string>hh:mm:ss </string>
+             </property>
+            </widget>
+           </item>
+           <item row="8" column="6">
+            <widget class="QTimeEdit" name="timeEdit_ot_thur">
+             <property name="displayFormat">
+              <string>hh:mm:ss </string>
+             </property>
+            </widget>
+           </item>
+           <item row="9" column="5">
+            <widget class="QTimeEdit" name="timeEdit_fri">
+             <property name="displayFormat">
+              <string>hh:mm:ss </string>
+             </property>
+            </widget>
+           </item>
+           <item row="9" column="6">
+            <widget class="QTimeEdit" name="timeEdit_ot_fri">
+             <property name="displayFormat">
+              <string>hh:mm:ss </string>
+             </property>
+            </widget>
+           </item>
+           <item row="10" column="5">
+            <widget class="QTimeEdit" name="timeEdit_wkend">
+             <property name="displayFormat">
+              <string>hh:mm:ss </string>
+             </property>
+            </widget>
+           </item>
+           <item row="10" column="6">
+            <widget class="QTimeEdit" name="timeEdit_ot_wkend">
+             <property name="displayFormat">
+              <string>hh:mm:ss </string>
+             </property>
+            </widget>
+           </item>
+           <item row="6" column="2">
+            <widget class="QTimeEdit" name="timeEdit_progress">
+             <property name="displayFormat">
+              <string>hh:mm:ss</string>
+             </property>
+            </widget>
+           </item>
+           <item row="8" column="2">
+            <widget class="QTimeEdit" name="timeEdit_subtract">
+             <property name="displayFormat">
+              <string>hh:mm:ss</string>
+             </property>
+            </widget>
+           </item>
+           <item row="9" column="0">
+            <widget class="QLabel" name="title_timer">
+             <property name="text">
+              <string>Timer</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="page_5">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>554</width>
+         <height>236</height>
+        </rect>
+       </property>
+       <attribute name="label">
+        <string>Time Clock Entries</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout">
+        <item>
+         <widget class="QFrame" name="frame">
+          <layout class="QGridLayout" name="gridLayout_5">
+           <item row="1" column="0">
+            <widget class="QLabel" name="title_start_1">
+             <property name="text">
+              <string>Start</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QLabel" name="title_start_2">
+             <property name="text">
+              <string>Start</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="0">
+            <widget class="QLabel" name="title_end_1">
+             <property name="text">
+              <string>End</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="1">
+            <widget class="QLabel" name="title_end_2">
+             <property name="text">
+              <string>End</string>
+             </property>
+            </widget>
+           </item>
+           <item row="7" column="0">
+            <widget class="QLabel" name="title_wk_total">
+             <property name="text">
+              <string>Total</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0">
+            <widget class="QDateTimeEdit" name="timeEdit_start_1">
+             <property name="readOnly">
+              <bool>true</bool>
+             </property>
+             <property name="date">
+              <date>
+               <year>2012</year>
+               <month>1</month>
+               <day>1</day>
+              </date>
+             </property>
+             <property name="time">
+              <time>
+               <hour>9</hour>
+               <minute>0</minute>
+               <second>0</second>
+              </time>
+             </property>
+             <property name="displayFormat">
+              <string>hh:mm:ss ap</string>
+             </property>
+            </widget>
+           </item>
+           <item row="6" column="0">
+            <widget class="QDateTimeEdit" name="timeEdit_end_1">
+             <property name="readOnly">
+              <bool>true</bool>
+             </property>
+             <property name="date">
+              <date>
+               <year>2012</year>
+               <month>1</month>
+               <day>1</day>
+              </date>
+             </property>
+             <property name="time">
+              <time>
+               <hour>9</hour>
+               <minute>0</minute>
+               <second>0</second>
+              </time>
+             </property>
+             <property name="displayFormat">
+              <string>hh:mm:ss ap</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="1">
+            <widget class="QDateTimeEdit" name="timeEdit_start_2">
+             <property name="readOnly">
+              <bool>true</bool>
+             </property>
+             <property name="date">
+              <date>
+               <year>2012</year>
+               <month>1</month>
+               <day>1</day>
+              </date>
+             </property>
+             <property name="time">
+              <time>
+               <hour>9</hour>
+               <minute>0</minute>
+               <second>0</second>
+              </time>
+             </property>
+             <property name="displayFormat">
+              <string>hh:mm:ss ap</string>
+             </property>
+            </widget>
+           </item>
+           <item row="6" column="1">
+            <widget class="QDateTimeEdit" name="timeEdit_end_2">
+             <property name="readOnly">
+              <bool>true</bool>
+             </property>
+             <property name="date">
+              <date>
+               <year>2012</year>
+               <month>1</month>
+               <day>1</day>
+              </date>
+             </property>
+             <property name="time">
+              <time>
+               <hour>9</hour>
+               <minute>0</minute>
+               <second>0</second>
+              </time>
+             </property>
+             <property name="displayFormat">
+              <string>hh:mm:ss ap</string>
+             </property>
+            </widget>
+           </item>
+           <item row="8" column="0">
+            <widget class="QTimeEdit" name="timeEdit_total">
+             <property name="readOnly">
+              <bool>true</bool>
+             </property>
+             <property name="date">
+              <date>
+               <year>2012</year>
+               <month>1</month>
+               <day>1</day>
+              </date>
+             </property>
+             <property name="currentSection">
+              <enum>QDateTimeEdit::HourSection</enum>
+             </property>
+             <property name="displayFormat">
+              <string>hh:mm:ss</string>
+             </property>
+            </widget>
+           </item>
+           <item row="8" column="1">
+            <widget class="QLabel" name="labelWeeklyTotal">
+             <property name="text">
+              <string>Weekly Total</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>572</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuQuit">
+    <property name="title">
+     <string>File </string>
+    </property>
+    <addaction name="actionSaveAndClose"/>
+    <addaction name="actionClose_without_Save"/>
+    <addaction name="separator"/>
+    <addaction name="actionSave"/>
+    <addaction name="actionRecalculate"/>
+    <addaction name="actionReset_without_Save"/>
+    <addaction name="actionUpload_Time_Monday"/>
+   </widget>
+   <widget class="QMenu" name="menuSettings">
+    <property name="title">
+     <string>Settings</string>
+    </property>
+    <addaction name="actionGoal"/>
+    <addaction name="actionWeekly_Goal"/>
+    <addaction name="separator"/>
+    <addaction name="actionDays_Off"/>
+    <addaction name="actionBillable_Hours"/>
+    <addaction name="actionNon_Discount_Hours"/>
+    <addaction name="separator"/>
+   </widget>
+   <addaction name="menuQuit"/>
+   <addaction name="menuSettings"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionSaveAndClose">
+   <property name="icon">
+    <iconset resource="../resources.qrc">
+     <normaloff>:/resources/resources/icons/application-exit.png</normaloff>:/resources/resources/icons/application-exit.png</iconset>
+   </property>
+   <property name="text">
+    <string>Save And Close</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Q</string>
+   </property>
+   <property name="iconVisibleInMenu">
+    <bool>true</bool>
+   </property>
+  </action>
+  <action name="actionRecalculate">
+   <property name="icon">
+    <iconset resource="../resources.qrc">
+     <normaloff>:/resources/resources/icons/view-refresh.png</normaloff>:/resources/resources/icons/view-refresh.png</iconset>
+   </property>
+   <property name="text">
+    <string>Recalculate</string>
+   </property>
+  </action>
+  <action name="actionGoal">
+   <property name="text">
+    <string>Yearly Goal</string>
+   </property>
+  </action>
+  <action name="actionDays_Off">
+   <property name="text">
+    <string>Days Off</string>
+   </property>
+  </action>
+  <action name="actionBillable_Hours">
+   <property name="text">
+    <string>Billable Hours</string>
+   </property>
+  </action>
+  <action name="actionNon_Discount_Hours">
+   <property name="text">
+    <string>Non Discount Hours</string>
+   </property>
+  </action>
+  <action name="actionWeekly_Goal">
+   <property name="text">
+    <string>Weekly Goal</string>
+   </property>
+  </action>
+  <action name="actionVacation_Date">
+   <property name="text">
+    <string>Vacation Date</string>
+   </property>
+  </action>
+  <action name="actionSave">
+   <property name="icon">
+    <iconset resource="../resources.qrc">
+     <normaloff>:/resources/resources/icons/document-save.png</normaloff>:/resources/resources/icons/document-save.png</iconset>
+   </property>
+   <property name="text">
+    <string>Save Time Updates</string>
+   </property>
+  </action>
+  <action name="actionReset_without_Save">
+   <property name="icon">
+    <iconset resource="../resources.qrc">
+     <normaloff>:/resources/resources/icons/window-close.png</normaloff>:/resources/resources/icons/window-close.png</iconset>
+   </property>
+   <property name="text">
+    <string>Reset without Save</string>
+   </property>
+  </action>
+  <action name="actionClose_without_Save">
+   <property name="icon">
+    <iconset resource="../resources.qrc">
+     <normaloff>:/resources/resources/icons/application-exit.png</normaloff>:/resources/resources/icons/application-exit.png</iconset>
+   </property>
+   <property name="text">
+    <string>Close without Save</string>
+   </property>
+  </action>
+  <action name="actionUpload_Time_Monday">
+   <property name="text">
+    <string>Upload Time Monday</string>
+   </property>
+  </action>
+ </widget>
+ <resources>
+  <include location="../resources.qrc"/>
+ </resources>
+ <connections/>
+</ui>
